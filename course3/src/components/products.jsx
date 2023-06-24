@@ -30,7 +30,6 @@ function Products() {
         price : message.price
       }
       setMessage(msg)
-      console.log(msg)
     }
     else if (e.target.value.trim().length <= 3)
     {
@@ -78,10 +77,15 @@ function Products() {
     }
     //let Prod = [myproduct, ...products]
     //setProducts(Prod)
-    products.unshift(myproduct);
+    console.log(message)
+    if(message.label.length==0 && message.price.length==0){
+      console.log('yes')
+      products.unshift(myproduct);
     setProducts([...products]);
     setPrice(0)
     setTitle("")
+    }
+    
   }
 
 
@@ -92,14 +96,14 @@ function Products() {
       <form onSubmit={submitForm}>
         <div className="form-group w-25 mx-2 my-2 mb-1">
           <label htmlFor="" className="form-label">Label</label>
-          <input defaultValuevalue={title} type="text" onChange={titleInput}  className="form-control py-2 px-2" />
+          <input defaultValue={title} type="text" onChange={titleInput}  className="form-control py-2 px-2" />
           {message.label && (
             <div className="alert alert-danger">{message.label}</div>
           )}
         </div>
         <div className="form-group mx-2 w-25 my-2 mb-1">
           <label htmlFor="" className="form-label py-1 px-2">price</label>
-          <input defaultValuevalue={price} type="number" onChange={priceInput} className="form-control" />
+          <input defaultValue={price} type="number" onChange={priceInput} className="form-control" />
           {message.price && (
             <div className="alert alert-danger mt-3">{message.price}</div>
           )}
