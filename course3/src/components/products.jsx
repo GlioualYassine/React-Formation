@@ -40,7 +40,7 @@ function Products() {
       setMessage(msg)
     }
     else{        
-        setTitle(e.target.value)  
+      setTitle(e.target.value)  
       let msg = {
         label : "",
         price : message.price
@@ -58,12 +58,12 @@ function Products() {
     }
    
     else{        
-        setTitle(e.target.value)    
+        setPrice(e.target.value)    
       let msg = {
         label : message.label,
         price : ""
             }
-            setMessage(msg)
+      setMessage(msg)
 
     }
   }
@@ -81,10 +81,11 @@ function Products() {
     if(message.label.length==0 && message.price.length==0){
       console.log('yes')
       products.unshift(myproduct);
-    setProducts([...products]);
-    setPrice(0)
-    setTitle("")
+      setProducts([...products]);
+      setPrice(0)
+      setTitle("")
     }
+   
     
   }
 
@@ -114,10 +115,10 @@ function Products() {
         <div>
             {products.map((prod,index)=>(
                <Product key={index} id = {prod.id} onDeleteProduct = {deleteProduct}>
-                 <div class="card-header">{prod.label}</div>
-                 <div class="card-body">
-                        <h4 class="card-title">Price</h4>
-                        <p class="card-text">
+                 <div className="card-header">{prod.label}</div>
+                 <div className="card-body">
+                        <h4 className="card-title">Price</h4>
+                        <p className="card-text">
                         <button className='btn btn-primary ml-2'>{prod.price}</button>
 
                          </p>
