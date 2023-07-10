@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState , useEffect } from "react";
+import Swal from 'sweetalert2'
  const ArticleListe = () => {
     const [articles,setArticles]=useState([])
     async function getArticle(){
@@ -63,7 +64,7 @@ import { useState , useEffect } from "react";
                 </thead>
                 <tbody>
                 {articles.map(art=>(
-                    <tr>
+                    <tr key={art.id}>
                         <td>{art.id}</td>
                         <td>{art.name}</td>
                         <td>{art.age}</td>

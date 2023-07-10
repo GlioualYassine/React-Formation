@@ -48,11 +48,6 @@
     {
       "name": "ruzgar",
       "age": "25",
-      "id": 11
-    },
-    {
-      "name": "ruzgar",
-      "age": "25",
       "id": 12
     },
     {
@@ -64,16 +59,6 @@
       "name": "ruzgar",
       "age": "25",
       "id": 14
-    },
-    {
-      "name": "ruzgar",
-      "age": "25",
-      "id": 15
-    },
-    {
-      "name": "ruzgar",
-      "age": "25",
-      "id": 16
     }
   ]
 }

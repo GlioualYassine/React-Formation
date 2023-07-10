@@ -2,7 +2,7 @@ import React from 'react'
 import Product from './product';
 import { useState } from "react"
 import {v4 as uuid} from "uuid"
-import { useContext } from 'react';
+import { useContext , useRef } from 'react';
 import { ProductContext } from '../context/ProductContext';
 
 function Products() {
@@ -10,38 +10,23 @@ function Products() {
   let data = useContext(ProductContext)
   let [newProduct,setNewProduct]= useState(data.newProduct)
   let {products,addProduct} = useContext(ProductContext)
-   
+  const title = useRef("")
+  const price = useRef(0)
   
-    console.log('data',data)
-    console.log('new Product',newProduct)
-    console.log("products",products)
-
- 
-
-  let [title,setTitle] = useState()
-  let [price,setPrice] = useState()
-  
-  let titleInput = (e)=>{        
-      setTitle(e.target.value)  
-    }
-      
-  let priceInput = (e)=>{
-        setPrice(e.target.value)    
-    }
   
 
   let submitForm = (e)=>{
     e.preventDefault()
     let myproduct = {
       id : uuid(),
-      label : title,
-      price
+      label : title.current.value,
+      price : price.current.value
     }
     addProduct(myproduct)
-
+    title.current.value=""
+    price.current.value = ""
     
-      setPrice(0)
-      setTitle("")
+      
     }
    
     
@@ -55,12 +40,12 @@ function Products() {
       <form onSubmit={submitForm}>
         <div className="form-group w-25 mx-2 my-2 mb-1">
           <label htmlFor="" className="form-label">Label</label>
-          <input defaultValue={title} type="text" onChange={titleInput}  className="form-control py-2 px-2" />
+          <input ref={title}  type="text"  className="form-control py-2 px-2" />
           
         </div>
         <div className="form-group mx-2 w-25 my-2 mb-1">
           <label htmlFor="" className="form-label py-1 px-2">price</label>
-          <input defaultValue={price} type="number" onChange={priceInput} className="form-control" />
+          <input ref={price}  type="number"  className="form-control" />
           
           
         </div>
