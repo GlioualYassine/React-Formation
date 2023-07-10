@@ -22,6 +22,9 @@ function Nav() {
                     <li className="nav-item">
                     <NavLink  className={(navData)=>`nav nav-link ${navData.isActive ? "active" : ""}`} to="/contacts">Contacts</NavLink>
                     </li>
+                    <li className='nav-item'>
+                    <NavLink className={(navData)=>`nav nav-link ${navData.isActive ? 'active' : ""}`} to={"/articles"}>Articles</NavLink>
+                    </li>
                     
                     <li className="nav-item">
                     <NavLink className={(navData)=>`nav nav-link ${navData.isActive ? "active" : ""}`} to="/about">About</NavLink>
