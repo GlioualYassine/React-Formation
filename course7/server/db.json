@@ -1,11 +1,6 @@
 {
   "articales": [
     {
-      "name": "sila",
-      "age": "29",
-      "id": 1
-    },
-    {
       "name": "rehem",
       "age": "19",
       "id": 2
@@ -54,11 +49,6 @@
       "name": "yil",
       "age": "26",
       "id": 12
-    },
-    {
-      "name": "yil",
-      "age": "26",
-      "id": 13
     },
     {
       "name": "yil",
@@ -174,21 +164,6 @@
       "name": "yil",
       "age": "26",
       "id": 36
-    },
-    {
-      "name": "yil",
-      "age": "26",
-      "id": 37
-    },
-    {
-      "name": "yil",
-      "age": "26",
-      "id": 38
-    },
-    {
-      "name": "yil",
-      "age": "26",
-      "id": 39
     }
   ]
 }
